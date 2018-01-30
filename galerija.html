@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Galerija</title>
+	<link type="text/css" rel="stylesheet" href="stil.css">
+	<link rel="icon" type="image/png" href="slike/favicon2.png"/>
+</head>
+
+<body>
+<div id="omot">
+	<header></header>
+
+	<nav>
+	  <ul class="meni">
+	  
+		<li><a href="index.html">Naslovna</a></li>
+		
+		<li class="dropdown">
+		<a href="film.html" class="dropbtn">O filmu</a>
+			<div class="dropdown-content">
+				<a href="kritike.html">Kritike</a>
+				<a href="radnja.html">Radnja</a>
+				
+			</div>
+		</li>
+		<li><a href="galerija.html">Galerija</a></li> 
+		<li><a href="kontakt.html">Kontakt/Prijava</a></li> 
+	  
+	  </ul>
+	</nav>
+
+	<section id="lijevo"><img src="slike/lijeva2.png"></section>
+
+	<section id="galerija">
+	
+		
+		<div id="slika">
+		<img id="fotka" src="slike/galerija/img1.jpg" width="440" height="450px;"/>
+		
+		<script>
+		var i = 0; 
+		var slikice =["slike/galerija/img1.jpg","slike/galerija/img2.jpg", "slike/galerija/img3.jpg","slike/galerija/img4.jpg","slike/galerija/img5.jpg","slike/galerija/img6.png","slike/galerija/img7.jpg","slike/galerija/img8.jpg","slike/galerija/img9.jpg","slike/galerija/img10.jpg"];
+
+		function galerija()
+		{
+			var slika = document.getElementById("fotka");
+			slika.setAttribute("src",slikice[i++]);
+			
+			if(i > 9)
+				i=0;
+		}
+		
+		function galerija2()
+		{
+			var slika = document.getElementById("fotka");
+			slika.setAttribute("src",slikice[i--]);
+			
+			if(i < 1)
+				i=6;
+			
+		}
+	</script>
+		</div>
+		
+		<button id="sljedecaS" onclick="galerija()">Next</button>
+		<button id="prethodnaS" onclick="galerija2()">Previous</button>
+	
+	</section>
+
+	<section id="desno"></section>
+	
+	<footer id="footerN">A Clockwork Orange © 2017 Ema Devcic | Barbara Ninic</footer>
+
+	
+</div>
+</body>
+</html>
+

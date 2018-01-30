@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Radnja</title>
+	<link type="text/css" rel="stylesheet" href="stil.css">
+	<link rel="icon" type="image/png" href="slike/favicon2.png"/>
+</head>
+
+<body>
+<div id="omot">
+	<header></header>
+
+	<nav>
+	  <ul class="meni">
+	  
+		<li><a href="index.html">Naslovna</a></li>
+		<li class="dropdown">
+		<a href="film.html" class="dropbtn">O filmu</a>
+			<div class="dropdown-content">
+				<a href="kritike.html">Kritike</a>
+				<a href="radnja.html">Radnja</a>
+			</div>
+		</li>
+		<li><a href="galerija.html">Galerija</a></li> 
+		<li><a href="kontakt.html">Kontakt/Prijava</a></li> 
+	  
+	  </ul>
+	</nav>
+
+	<section id="lijevo"><img src="slike/lijeva1.png"></section>
+	
+	<section id="sredina">
+	
+	<div class="slideshow-container">
+    <div class="mySlides fade">
+    <div class="sadrzajS"> 
+		<h1>RADNJA</h1>
+		<p class="pn"></p><br>
+		<ul class="indexText">
+		<br><p> Alex je bistar engleski mladić kojemu je škola zadnja stvar na pameti. Omiljena mu je zabava večernji izlazak s prijateljima koji se uglavnom sastoji od okršaja sa suparničkim bandama, napada na nedužne prolaznike i silovanja.</p><br>
+		<img src="slike/banda.gif" class="slikeRadnje" style="width:350px" height="200px" class="alexJede" > 
+		
+	</div>
+    <img src="slike/barbi.png" style="width:540px" height="554px">
+    </div>
+
+    <div class="mySlides fade">
+    <div class="sadrzajS">
+		<h1></h1>
+		<ul class="indexText">
+		<p>No, članovima Alexove bande dojadilo je trpjeti njegovo šefovanje pa ga prilikom jedne provale ostavljaju na cjedilu i prepuštaju policiji. </p><br>
+		<img src="slike/voda.gif" class="slikeRadnje" style="width:350px" height="200px" class="alexJede"> <br><br>
+		<p>Alex je optužen za ubojstvo i osuđen na 14 godina zatvora. Suprotno očekivanjima, u zatvoru se drži podalje od nevolja, a pomaže i svećeniku pri vođenju misa. </p>
+	
+	</div>
+    <img src="slike/barbi2.png" style="width:540px" height="554px">   
+    </div>
+
+  
+    <div class="mySlides fade">
+    <div class="sadrzajS">
+	
+		<h1></h1>
+		<ul class="indexText">
+		<img src="slike/ubojica.gif" class="slikeRadnje" style="width:360px" height="200px" class="alexJede"> <br><br>
+			<p>U zatvor dolazi ministar unutarnjih poslova kako bi odabrao jednog zatvorenika za novi eksperimentalni program duševne rehabilitacije koji na radikalan način uništava zlo u čovjeku.</p><br>
+		<p>Izbor pada upravo na Alexa te on napušta zatvor kako bi započeo dvotjedni tretman liječenja.</p>
+		
+		
+	</div>
+	
+	<img src="slike/barbi2.png" style="width:540px" height="554px">
+    </div>
+	
+	<div class="mySlides fade">
+    <div class="sadrzajS">
+	
+		<h1></h1>
+		<ul class="indexText">
+		<img src="slike/alex_jede.gif" class="slikeRadnje" style="width:350px" height="200px"><br><br>
+		<p> No, čim sazna o kakvom je liječenju riječ, poželjet će da nije nikada napustio zatvor... </p><br>
+		
+		
+		
+	</div>
+	
+	<img src="slike/barbi2.png" style="width:540px" height="554px">
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+<!-- Slideshow JavaScript -->
+<script>
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+	
+</section>
+
+	<section id="desno"></section>
+	
+	<footer id="footerS">A Clockwork Orange © 2017 Ema Devcic | Barbara Ninic</footer>
+
+</div>
+</body>
+</html>
+

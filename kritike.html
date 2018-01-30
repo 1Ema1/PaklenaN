@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Kritike</title>
+	<link type="text/css" rel="stylesheet" href="stil.css">
+	<link rel="icon" type="image/png" href="slike/favicon2.png"/>
+</head>
+
+<body>
+<div id="omot">
+	<header></header>
+
+	<nav>
+	  <ul class="meni">
+	  
+		<li><a href="index.html">Naslovna</a></li>
+		<li class="dropdown">
+		<a href="film.html" class="dropbtn">O filmu</a>
+			<div class="dropdown-content">
+				<a href="kritike.html">Kritike</a>
+				<a href="radnja.html">Radnja</a>
+			</div>
+		</li>
+		<li><a href="galerija.html">Galerija</a></li> 
+		<li><a href="kontakt.html">Kontakt/Prijava</a></li> 
+	  
+	  </ul>
+	</nav>
+
+	<section id="lijevo"><img src="slike/lijeva1.png"></section>
+	
+	<section id="sredina">
+	
+	<div class="slideshow-container">
+    <div class="mySlides fade">
+    <div class="sadrzajS"> 
+		<h1> KRITIKE </h1>
+		<p class="pn"></p><br>
+		<ul class="indexText">
+		<br><li>Kritika je većinom hvalila film, makar su i neki prigovarali da je nasilje previše ekscesivno.</li><br><br>
+			<img src="slike/nasilje.gif" style="width:400px" height="200px" class=""> 
+	
+	</div>
+    <img src="slike/barbi.png" style="width:540px" height="554px">
+    </div>
+
+    <div class="mySlides fade">
+    <div class="sadrzajS">
+		<h1></h1>
+		<ul class="indexText">
+		<li><a href="https://en.wikipedia.org/wiki/James_A._Brundage" target="blank">James Brundage </a>je hvalio film: "Poruka, za sve one koji nisu u stanju analizirati "Paklenu naranču" u bilo čemu osim u nasilju, je ista ona u Hinduizmu koja govori o karmi; svatko na kraju dobije ono što zaslužuje.<br><br>
+		"Paklena naranča" je film koji, od početka do kraja, pršti ironijom. To je briljantno, crno poetično djelo koje istodobno fascinira i izaziva gađenje".</li><br><br>
+		<li>S druge strane, <a href="https://hr.wikipedia.org/wiki/Roger_Ebert" target="_blank">Roger Ebert</a> je jednostavno otvoreno priznao da mu se film nije svidio: "Kubrickova "Paklena naranča" je ideološki kaos, paranoidna desničarska fantazija koja se maskirala kao Orwellovo upozorenje. Pravi se da se protivi policijskoj državi i nametnutoj kontroli uma, no sve što radi je samo slavljenje zlobe glavnog protagonista, Alexa".”</li>
+		
+	
+	</div>
+    <img src="slike/barbi2.png" style="width:540px" height="554px">   
+    </div>
+
+  
+    <div class="mySlides fade">
+    <div class="sadrzajS">
+	
+		<h1></h1>
+		<ul class="indexText">
+		<li><a href="https://hr.wikipedia.org/wiki/Arsen_Oremovi%C4%87" target="_blank">Arsen Oremović</a> je filmu dao 4 od 4 'kritičarska prsta': "Nakon devedesetih, s filmovima kao što su "Rođeni ubojice", "Pakleni šund" i nizom drugih prozivanih naslova, definitivno su se pomakle granice u prikazivanju i percepciji nasilja na filmu.<br><br>
+		S današnje distance djeluje pomalo neshvatljivo da je "Paklena naranča" trpjela tako žestoke napade i bila zabranjena. <br><br> Međutim, to ne znači da film djeluje staromodno jer Kubricku već na početku nije bio cilj scenama nasilja ići za realizmom, nego ih je koreografirao poput baleta, a poetika filma ostala je uglavnom netaknuta"</li>
+	
+	</div>
+	
+	<img src="slike/barbi2.png" style="width:540px" height="554px">
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+<!-- Slideshow JavaScript -->
+<script>
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+	
+</section>
+
+	<section id="desno"></section>
+	
+	<footer id="footerS">A Clockwork Orange © 2017 Ema Devcic | Barbara Ninic</footer>
+
+</div>
+</body>
+</html>
+

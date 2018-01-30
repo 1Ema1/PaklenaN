@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Kontakt/Prijava</title>
+	<link type="text/css" rel="stylesheet" href="stil.css">
+	<link rel="icon" type="image/png" href="slike/favicon2.png"/>
+</head>
+
+<script language="javascript">
+
+<!-- obrazac za registraciju -->
+            function last(){
+                vIme = checkIme();
+                vPrezime = checkPrezime();
+                vEmail = checkEmail();
+                vMob = checkMob();
+                vNick = checkNick();
+                vPass = checkPass();
+                if(vIme && vPrezime && vEmail && vMob && vNick && vPass== 1 ){
+                    return document.forms["registracija"]["reg"].disabled=false;
+                }
+                else{
+                    return document.forms["registracija"]["reg"].disabled=true;
+                }
+            }
+            function checkIme(){
+                var ime=document.forms["registracija"]["ime"].value;
+                var filterIme = /^[A-ZŠĐČĆŽ][a-zšđžčć]{2,}$/;
+                var vIme = 0;
+                if (!filterIme.test(ime.valueOf())){
+                    vIme = 0;
+                    return vIme;
+                }
+                else{
+                    vIme = 1;
+                    return vIme;
+                }
+            }
+            function alertIme(){
+                vIme = checkIme();
+                if (vIme == 0){
+                    alert("Niste unijeli pravilno ime");
+                }
+            }
+            function checkPrezime(){
+                var prezime=document.forms["registracija"]["prezime"].value;
+                var filterPrezime = /^[A-ZŠĐČĆŽ][a-zšđžčć]{3,}$/;
+                var vPrezime = 0;
+                if (!filterPrezime.test(prezime.valueOf())){
+                    vPrezime = 0;
+                    return vPrezime;
+                    }
+                else{
+                    vPrezime = 1;
+                    return vPrezime;
+                    }
+            }
+            function alertPrezime(){
+                vPrezime = checkPrezime();
+                if (vPrezime == 0){
+                    alert("Niste unijeli pravilno prezime");
+                }
+            }
+           
+            function checkEmail(){
+                var email=document.forms["registracija"]["email"].value;
+                var filterEmail = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/;
+                var vEmail = 0;
+                if (!filterEmail.test(email.valueOf())){
+                    vEmail = 0;
+                    return vEmail;
+                    }
+                else{
+                    vEmail = 1;
+                    return vEmail;
+                    }
+            }
+            function alertEmail(){
+                vEmail = checkEmail();
+                if (vEmail == 0){
+                    alert("Niste pravilno unijeli Email");
+                }
+            }
+            function checkMob(){
+                var mob1=document.forms["registracija"]["mob1"].value;
+                var mob2=document.forms["registracija"]["mob2"].value;
+                var filterMob1 = /^09[12589]$/;
+                var filterMob2 = /^(\d{6}|\d{7})$/;
+                var vMob = 0;
+                if(!filterMob1.test(mob1.valueOf())){
+                    vMob = 0;
+                    return vMob;
+                }
+                else{
+                    if(!filterMob2.test(mob2.valueOf())){
+                        vMob = 0;
+                        return vMob;
+                    }
+                    else{
+                        vMob = 1;
+                        return vMob;
+                    }
+                }
+            }
+            function alertMob(){
+                vMob = checkMob();
+                if (vMob == 0){
+                    alert("Niste pravilno unijeli broj mobitela");
+                }
+            }
+            function checkNick(){
+                var nick=document.forms["registracija"]["nick"].value;
+                var filterNick = /^\w{3,15}$/;
+                var vNick = 0;
+                if (!filterNick.test(nick.valueOf())){
+                    vNick = 0;
+                    return vNick;
+                    }
+                else{
+                    vNick = 1;
+                    return vNick;
+                    }
+            }
+            function alertNick(){
+                vNick = checkNick();
+                if (vNick == 0){
+                    alert("Niste unijeli pravilno korisnicko ime");
+                }
+            }
+            function checkPass(){
+                var pass=document.forms["registracija"]["pass"].value;
+                var filterPass = /^\w{8,15}$/;
+                var vPass = 0;
+                if (!filterPass.test(pass.valueOf())){
+                    vPass = 0;
+                    return vPass;
+                    }
+                else{
+                    vPass = 1;
+                    return vPass;
+                    }
+            }
+            function alertPass(){
+                vPass = checkPass();
+                if (vPass == 0){
+                    alert("Niste unijeli pravilno lozinku");
+                }
+            }
+            function alertRegistracija(){
+                alert("Uspješno ste se registrirali");
+            }
+        </script>
+
+<body>
+<div id="omot">
+	<header></header>
+
+	<nav>
+	  <ul class="meni">
+	  
+		<li><a href="index.html">Naslovna</a></li>
+		
+		<li class="dropdown">
+		<a href="film.html" class="dropbtn">O filmu</a>
+			<div class="dropdown-content">
+				<a href="kritike.html">Kritike</a>
+				<a href="radnja.html">Radnja</a>
+				
+			</div>
+		</li>
+		<li><a href="galerija.html">Galerija</a></li> 
+		<li><a href="kontakt.html">Kontakt/Prijava</a></li> 
+	  
+	  </ul>
+	</nav>
+
+	<section id="lijevo"><img src="slike/lijeva3.png"></section>
+
+	<section id="sredina">
+	
+		<div class="slideshow-container">
+		<div class="mySlides fade">
+		<div class="sadrzajS"> 
+			
+			<h1>KONTAKT</h1>
+				<div id="kontakt">
+					
+					<form method="POST" action="mailto:edevcic@unin.hr" enctype="text/plain">
+					<p> Vaše ime i prezime:<br><input type="text" name="ime" size="35"></p>
+
+					<p> Vaš tekst:<br><textarea rows="2" name="tekst" cols="27"> </textarea></p>
+					
+					<p> Kako vam se svidjela naša stranica? </p>
+					<input type="radio" name="izbor" value="jako"> Odlična je <br>
+					<input type="radio" name="izbor" value="nimalo"> Ne sviđa mi se<br>
+					<input type="radio" name="izbor" value="onako"> Ni da ni ne <br><br>
+					
+					<p> <input type="submit" value="Pošalji poruku">
+						<input type="reset" value="Obriši"> 
+					</p> 
+					</form>
+				</div>
+			
+		</div>
+		<img src="slike/barbi.png" style="width:540px" height="554px">
+		</div>
+
+		
+		<div class="mySlides fade">
+		<div class="sadrzajS">
+			
+			<h1>REGISTRACIJA</h1>
+				<div id="registracija">
+				
+					<div div style="">
+					<form name="registracija" class="reg" method="post" enctype="text/plain" align="left">
+					<p class="tekstf">
+						Ime: <br><input type="text" name="ime" size="30" onchange="return last(),alertIme()"><br>
+					 
+						Prezime:<br> <input type="text" name="prezime" size=30" onchange="return last(),alertPrezime()"><br>
+				   
+					
+						Email:<br> <input type="text" name="email" size="30" onchange="return last(),alertEmail()"><br>
+				   
+						Mob:<br> <select size="1" name="mob1" type="text" onchange="return last()">
+							<option selected>odaberite</option>
+							<option>098</option>
+							<option>099</option>
+							<option>091</option>
+							<option>092</option> 
+							<option>095</option> 
+						</select> <input type="text" name="mob2" size="16" onchange="return last(),alertMob()"><br>
+		   
+						Korisničko ime:<br><input type="text" name="nick" size="30" onchange="return last(),alertNick()"><br>
+					
+						Lozinka: <br>
+						<input type="password" name="pass" size="30" onchange="return last(),alertPass()"><br>
+			
+						<br><br><input type="submit" value="Registriraj se" name="reg" disabled onclick="return alertRegistracija()">
+					</p>
+					</form></div>
+				</div>
+			
+			 
+		</div>
+		<img src="slike/barbi2.png" style="width:540px" height="554px">   
+		</div>
+
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+		
+	<!-- Slideshow JavaScript -->
+	<script>
+	var slideIndex = 1;
+	showSlides(slideIndex);
+
+	function plusSlides(n) {
+	  showSlides(slideIndex += n);
+	}
+
+	function currentSlide(n) {
+	  showSlides(slideIndex = n);
+	}
+
+	function showSlides(n) {
+	  var i;
+	  var slides = document.getElementsByClassName("mySlides");
+	  var dots = document.getElementsByClassName("dot");
+	  if (n > slides.length) {slideIndex = 1}
+	  if (n < 1) {slideIndex = slides.length}
+	  for (i = 0; i < slides.length; i++) {
+		  slides[i].style.display = "none";
+	  }
+	  for (i = 0; i < dots.length; i++) {
+		  dots[i].className = dots[i].className.replace(" active", "");
+	  }
+	  slides[slideIndex-1].style.display = "block";
+	  dots[slideIndex-1].className += " active";
+	}
+	</script>
+	
+	</section>
+
+	<section id="desno"></section>
+	
+	<footer id="footerS">A Clockwork Orange © 2017 Ema Devcic | Barbara Ninic</footer>
+	
+</div>
+</body>
+</html>
+
